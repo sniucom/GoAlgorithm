@@ -277,3 +277,48 @@ func TestMaxNode(t *testing.T) {
 	index, max := head.Max()
 	t.Logf("最大值%s, 索引%d", max, index)
 }
+
+func TestFirstCommonNode(t *testing.T) {
+	headA := &LinkNode{"A", nil}
+	headA.Push("B")
+	headA.Push("C")
+	headA.Push("D")
+
+	headB := &LinkNode{"1", nil}
+	headB.Push("2")
+	headB.Push("3")
+	headB.Push("4")
+
+	headC := &LinkNode{"采蘑菇的小姑娘", nil}
+	headC.Push("爱吃鱼的大脸猫")
+
+	currentA := headA
+	for currentA.Next != nil {
+		currentA = currentA.Next
+	}
+	currentA.Next = headC
+
+	currentB := headB
+	for currentB.Next != nil {
+		currentB = currentB.Next
+	}
+
+	maps := make(map[LinkNode]*LinkNode)
+	for headA != nil {
+		maps[*headA] = headA
+		headA = headA.Next
+	}
+
+	var commonNode *LinkNode
+	for headB != nil {
+		if maps[*headB] == headB {
+			commonNode = headB
+			break
+		}
+	}
+
+	if commonNode.Data != "采蘑菇的小姑娘" {
+		t.Error("寻找公共节点失败")
+	}
+
+}
