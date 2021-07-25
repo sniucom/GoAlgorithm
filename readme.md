@@ -67,3 +67,5 @@
     * B树
     * B+树
     * B*树
+   7. [二叉堆](/data_structure/7_heap/readme.md)
+   8. [跳表、并查集、线段树和树状数组](/data_structure/8_userful_sturcture/readme.md)) 
