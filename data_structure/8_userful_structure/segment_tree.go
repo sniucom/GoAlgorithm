@@ -51,4 +51,20 @@ func (tree *SegmentTree) Insert(data int) {
 	tree.segments[index].count++
 }
 
-//
+// 删除
+func (tree *SegmentTree) Delete(data int) {
+	left, right, index := 1, tree.max, 1
+	var middle int
+	for left != right {
+		tree.segments[index].count--
+		middle = (left + right) / 2
+		if data <= middle {
+			right = middle
+			index *= 2
+		} else {
+			left = middle + 1
+			index = index*2 + 1
+		}
+	}
+	tree.segments[index].count--
+}
