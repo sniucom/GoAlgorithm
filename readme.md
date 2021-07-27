@@ -70,3 +70,9 @@
    7. [二叉堆](/data_structure/7_heap/readme.md)
    8. [跳表、并查集、线段树和树状数组](/data_structure/8_userful_sturcture/readme.md)) 
    9. [字符串搜索](/data_structure/9_string_search/readme.md)
+    * BF暴力搜索
+    * RK算法
+    * BM算法
+    * KMP算法
+    * Trie树
+    * AC自动机
